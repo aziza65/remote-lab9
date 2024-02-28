@@ -21,7 +21,7 @@ class TestBookManager(unittest.TestCase):
 
     def test_remove_nonexistent_book(self):
         self.manager.add_book(self.book1)
-        self.manager.remove_book(0987)
+        self.manager.remove_book(987)
         self.assert(self.manager.list_books(), [self.book1])
 
 if __name__ == '__main__':
