@@ -12,17 +12,17 @@ class TestBookManager(unittest.TestCase):
     def test_add_book(self):
         self.manager.add_book(self.book1)
         self.manager.add_book(self.book2)
-        self.assert(self.manager.list_books(), [self.book1, self.book2])
+        self.assertEqual(self.manager.list_books(), [self.book1, self.book2])
 
     def test_remove_book(self):
         self.manager.add_book(self.book1)
         self.manager.remove_book(33456)
-        self.assert(self.manager.list_books(), [])
+        self.assertEqual(self.manager.list_books(), [])
 
     def test_remove_nonexistent_book(self):
         self.manager.add_book(self.book1)
         self.manager.remove_book(987)
-        self.assert(self.manager.list_books(), [self.book1])
+        self.assertEqual(self.manager.list_books(), [self.book1])
 
 if __name__ == '__main__':
     unittest.main()
